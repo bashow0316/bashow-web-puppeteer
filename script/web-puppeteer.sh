@@ -21,13 +21,13 @@ node trace.js json/google.json https://www.google.com/
 ## Elasticsearch post
 
 ### wide.json
-curl -s -H "Content-type: application/json" -X POST http:\/\/localhost:9200/wide-index/wide-puppeteer/$current_time -d @json/wide.json > /dev/null 2>&1
+curl -s -H "Content-type: application/json" -X POST http:\/\/localhost:9200/index-wide/wide-puppeteer/$current_time -d @json/wide.json > /dev/null 2>&1
 
 ### sindan.json
-curl -s -H "Content-type: application/json" -X POST http:\/\/localhost:9200/sindan-index/sindan-puppeteer/$current_time -d @json/sindan.json > /dev/null 2>&1
+curl -s -H "Content-type: application/json" -X POST http:\/\/localhost:9200/index-sindan/sindan-puppeteer/$current_time -d @json/sindan.json > /dev/null 2>&1
 
 ### google.json
-curl -s -H "Content-type: application/json" -X POST http:\/\/localhost:9200/google-index/google-puppeteer/$curent_time -d @json/google.json > /dev/null 2>&1
+curl -s -H "Content-type: application/json" -X POST http:\/\/localhost:9200/index-google/google-puppeteer/$curent_time -d @json/google.json > /dev/null 2>&1
 
 ## Remove json
 rm -rf json/*
