@@ -33,3 +33,11 @@ npm i puppteer
 
 ```
 
+### Elaticsearch
+Search index
+```
+curl -XGET localhost:9200/_aliases?pretty
+```
+
+Delete index
+curl -X DELETE localhost:9200/puppeteer-index
