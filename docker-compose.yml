@@ -12,7 +12,7 @@ services:
         soft: -1
         hard: -1
     volumes:
-      # mkdir elastic01-data && chowm -R 1000:1000 elastic01-data
+      # sudo mkdir elastic01-data && sudo chown -R 1000:1000 elastic01-data
       - ./elastic01-data:/usr/share/elasticsearch/data
     environment:
       ES_JAVA_OPTS: '-Xms2g -Xmx2g'
