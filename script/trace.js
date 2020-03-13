@@ -10,9 +10,10 @@ const puppeteer = require('puppeteer');
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.tracing.start({
-    path: process.argv[2],
-    categories: ['devtools.timeline']
+    path: process.argv[2]
+    // categories: ['devtools.timeline']
   })
+
 
   await page.goto(process.argv[3]);
   await page.tracing.stop();

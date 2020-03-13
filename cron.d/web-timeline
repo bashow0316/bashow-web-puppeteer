@@ -8,5 +8,5 @@ SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 # m h dom mon dow user	command
-*/5 *   * * *   bashow  cd /home/bashow/bashow-web-puppeteer/script && ./web-puppeteer.sh > /dev/null 2>&1
+*/5 *   * * *   user  cd /home/user/web-timeline/script && ./web-timeline.sh > /dev/null 2>&1
 
