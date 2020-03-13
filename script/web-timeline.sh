@@ -7,6 +7,9 @@
 ## timestamp
 current_time=$(date "+%Y.%m.%d-%H.%M.%S")
 
+##
+mkdir json
+
 ## puppeteer trace
 
 ### http://www.wide.ad.jp/
