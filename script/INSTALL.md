@@ -23,7 +23,6 @@ https://docs.docker.com/compose/
 ```
 sudo apt install chromium-browser
 sudo apt install npm
-sudo apt install jq
 ```
 
 #### puppteer
