@@ -19,14 +19,6 @@ Kibana
 To write...
 ```
 
-
-### APT install app
-
-```
-sudo apt install chromium-browser
-sudo apt install npm
-```
-
 ### puppteer
 
 ```
@@ -58,6 +50,13 @@ https://www.docker.com/
 
 ```
 https://docs.docker.com/compose/
+```
+
+### APT install app
+
+```
+sudo apt install chromium-browser
+sudo apt install npm
 ```
 
 ### npm install
