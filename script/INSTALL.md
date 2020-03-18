@@ -56,7 +56,7 @@ npm i puppeteer
 
 speedline
 ```
-sido npm install -g speedline
+sudo npm install -g speedline
 ```
 
 

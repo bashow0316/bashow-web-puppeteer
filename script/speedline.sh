@@ -16,7 +16,7 @@ mkdir -p $pjson
 
 
 
-cat web-speedline.conf | while read name url
+cat speedline.conf | while read name url
 do
   ## timestamp
   current_time=$(date "+%Y.%m.%d-%H.%M.%S")
