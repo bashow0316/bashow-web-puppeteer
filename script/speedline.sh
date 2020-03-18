@@ -31,7 +31,7 @@ do
   python3 speedline-parser.py $slout/speedline-$name $pjson/parser-$name.json
 
   ## input elasticsearch
-  curl -s -H "Content-type: application/json" -X POST http:\/\/localhost:9200/index-$name/$name-speedline/$current_time -d @$pjson/parser-$name.json # > /dev/null 2>&1
+  curl -s -H "Content-type: application/json" -X POST http:\/\/localhost:9200/index-$name/$name-speedline/$current_time -d @$pjson/parser-$name.json > /dev/null 2>&1
 done
 
 ## Remove json csv
