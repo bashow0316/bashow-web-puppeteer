@@ -1,8 +1,7 @@
 # monitoring-speedindex
 
-## monitoring web pages
 
-### Use application
+## Use application
 
 ```
 Docker
@@ -11,6 +10,18 @@ puppteer
 speedline
 Elasticsearch
 Kibana
+```
+
+### Docker
+
+```
+https://www.docker.com/
+```
+
+### Docker-compose
+
+```
+https://docs.docker.com/compose/
 ```
 
 ### puppteer
@@ -32,18 +43,6 @@ https://github.com/puppeteer/puppeteer/blob/master/docs/api.md#class-tracing
 https://developers.google.com/web/tools/lighthouse/audits/speed-index
 https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index
 https://github.com/paulirish/speedline
-```
-
-### Docker
-
-```
-https://www.docker.com/
-```
-
-### Docker-compose
-
-```
-https://docs.docker.com/compose/
 ```
 
 ### APT install app
