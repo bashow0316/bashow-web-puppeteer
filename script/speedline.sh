@@ -35,6 +35,6 @@ do
 done
 
 ## Remove json csv
-# rm trace-json/*
-# rm speedline-csv/*
-# rm jq-json/*
+rm $tjson
+rm $clout
+rm $pjson
