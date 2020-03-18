@@ -43,13 +43,13 @@ https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-
 https://github.com/paulirish/speedline`
 ```
 
-## Quick Start
+## Quickstart
 
 ```
 To write...
 ```
 
-## install
+## Install
 
 ### APT install app
 
