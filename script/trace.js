@@ -2,20 +2,23 @@
 // author: bashow
 // 2020/03/11
 
-// trace
 const puppeteer = require('puppeteer');
+
+
+var url = process.argv[2];
+var json = process.argv[3];
 
 (async () => {
 
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.tracing.start({
-    path: process.argv[2]
+    path: json,
+    screenshots: true
     // categories: ['devtools.timeline']
   })
 
-
-  await page.goto(process.argv[3]);
+  await page.goto(url);
   await page.tracing.stop();
   await browser.close();
 

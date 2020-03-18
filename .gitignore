@@ -1,4 +1,6 @@
 /script/node_modules
-/script/json/*
-/elastic01-data/*
+/script/trace-json
+/script/speedline-csv
+/script/jq-json
+/elastic01-data
 
