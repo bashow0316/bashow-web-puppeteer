@@ -32,7 +32,7 @@ https://github.com/puppeteer/puppeteer/blob/master/docs/api.md#pagetracing
 https://github.com/puppeteer/puppeteer/blob/master/docs/api.md#class-tracing
 ```
 
-### npm speedline
+### speedline
 
 ```
 https://developers.google.com/web/tools/lighthouse/audits/speed-index
