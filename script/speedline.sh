@@ -2,13 +2,13 @@
 
 # web-speedline.sh
 # author : bashow
-# 2020/03/19
+# 2020/03/20
 
-VERSION="0.0.98"
+VERSION="0.0.987"
 
 tjson=trace-json
 slout=speedline-out
-pjson=parser-json
+pjson=parse-json
 
 mkdir -p $tjson
 mkdir -p $slout
@@ -25,13 +25,10 @@ do
   # echo $name
 
   ## puppeteer and speedline
-  node trace.js $url $tjson/trece-$name.json
-  speedline $tjson/trece-$name.json > $slout/speedline-$name
-  ## parser
-  python3 speedline-parser.py $current_time $slout/speedline-$name $pjson/parser-$name.json
+  node trace-speedline.js $url $tjson/trece-$name.json $pjson/parse-$name.json
 
   ## input elasticsearch
-  curl -s -H "Content-type: application/json" -X POST http:\/\/localhost:9200/index-$name/$name-speedline/$current_time -d @$pjson/parser-$name.json > /dev/null 2>&1
+  curl -s -H "Content-type: application/json" -X POST http:\/\/localhost:9200/index-$name/$name-speedline/$current_time -d @$pjson/parse-$name.json > /dev/null 2>&1
 done
 
 ## Remove json csv
