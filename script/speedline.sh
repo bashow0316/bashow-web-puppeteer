@@ -11,7 +11,6 @@ slout=speedline-out
 pjson=parse-json
 
 mkdir -p $tjson
-mkdir -p $slout
 mkdir -p $pjson
 
 
@@ -33,5 +32,4 @@ done
 
 ## Remove json csv
 # rm $tjson/*
-# rm $slout/*
 # rm $pjson/*
