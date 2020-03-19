@@ -1,6 +1,7 @@
 # speedline-prser.py
 # author: bashow
 # 2020/03/18
+# python3
 
 import sys
 
@@ -12,7 +13,7 @@ def is_float(parameter):
         return False
 
 
-def speedline_to_json(speedline, jsonpath):
+def speedline_to_json(timestamp, speedline, jsonpath):
 
     with open(speedline, 'r') as fsl:
         read_data = fsl.readlines()
@@ -20,6 +21,8 @@ def speedline_to_json(speedline, jsonpath):
 
     with open(jsonpath, 'w') as fjson:
         fjson.write('{')
+        fjson.write('\n')
+        fjson.write('  "timestamp" : "' + timestamp + '",')
         fjson.write('\n')
         for index in read_data:
 
@@ -31,10 +34,10 @@ def speedline_to_json(speedline, jsonpath):
                     if (list[1] != 'NaN'):
                         fjson.write(list[1])
                     else:
-                        fjson.write('"' + list[1] + '"')
+                        fjson.write('  "' + list[1] + '"')
 
                 else:
-                    fjson.write('"' + list[1].replace(' ', '') + '"')
+                    fjson.write('  "' + list[1].replace(' ', '') + '"')
 
                 if (index != read_data[-1]):
                     fjson.write(',')
@@ -46,8 +49,8 @@ def speedline_to_json(speedline, jsonpath):
 if __name__ == '__main__':
 
     args = sys.argv
-    if len(sys.argv) == 3:
-            speedline_to_json(args[1], args[2])
+    if len(sys.argv) == 4:
+            speedline_to_json(args[1], args[2], args[3])
     else:
         # print('No argument')
         sys.exit()

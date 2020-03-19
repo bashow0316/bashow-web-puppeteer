@@ -2,9 +2,9 @@
 
 # web-speedline.sh
 # author : bashow
-# 2020/03/11
+# 2020/03/19
 
-VERSION="0.0.9"
+VERSION="0.0.98"
 
 tjson=trace-json
 slout=speedline-out
@@ -19,7 +19,7 @@ mkdir -p $pjson
 cat speedline.conf | while read name url
 do
   ## timestamp
-  current_time=$(date "+%Y.%m.%d-%H.%M.%S")
+  current_time=$(date -u "+%Y-%m-%dT%H:%M:%S")
 
   # echo $url
   # echo $name
@@ -28,13 +28,13 @@ do
   node trace.js $url $tjson/trece-$name.json
   speedline $tjson/trece-$name.json > $slout/speedline-$name
   ## parser
-  python3 speedline-parser.py $slout/speedline-$name $pjson/parser-$name.json
+  python3 speedline-parser.py $current_time $slout/speedline-$name $pjson/parser-$name.json
 
   ## input elasticsearch
   curl -s -H "Content-type: application/json" -X POST http:\/\/localhost:9200/index-$name/$name-speedline/$current_time -d @$pjson/parser-$name.json > /dev/null 2>&1
 done
 
 ## Remove json csv
-rm $tjson
-rm $clout
-rm $pjson
+# rm $tjson/*
+# rm $slout/*
+# rm $pjson/*

@@ -4,7 +4,7 @@ services:
 
   # elasticsearch
   elastic01:
-    image: docker.elastic.co/elasticsearch/elasticsearch-oss:7.5.0
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:7.6.0
     container_name: elastic01
     restart: 'no'
     ulimits:
@@ -24,7 +24,7 @@ services:
 
   # kibana
   kibana:
-    image: docker.elastic.co/kibana/kibana-oss:7.5.0
+    image: docker.elastic.co/kibana/kibana-oss:7.6.0
     container_name: kibana
     restart: 'no'
     environment:
