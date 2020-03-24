@@ -5,7 +5,7 @@
 
 - Docker
 - Docker-compose
-- puppteer
+- puppeteer
 - speedline
 - Elasticsearch
 - Kibana
@@ -22,7 +22,7 @@ https://www.docker.com/
 https://docs.docker.com/compose/
 ```
 
-### puppteer
+### puppeteer
 
 ```
 https://developers.google.com/web/tools/chrome-devtools
