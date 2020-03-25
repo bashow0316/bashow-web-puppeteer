@@ -20,14 +20,22 @@ do
   ## timestamp
   current_time=$(date -u "+%Y-%m-%dT%H:%M:%S")
 
-  # echo $url
-  # echo $name
+  echo "Start puppeter and speedline"
+  echo $url
+  echo $name
 
   ## puppeteer and speedline
   node trace-speedline.js $url $tjson/trece-$name.json $pjson/parse-$name.json
 
+  echo "End puppeteer and speedline"
+
+  echo "Start elasticsearh post"
+
   ## input elasticsearch
   curl -s -H "Content-type: application/json" -X POST http:\/\/localhost:9200/index-$name/$name-speedline/$current_time -d @$pjson/parse-$name.json > /dev/null 2>&1
+
+  echo "End elasticsearh post"
+
 done
 
 ## Remove json csv

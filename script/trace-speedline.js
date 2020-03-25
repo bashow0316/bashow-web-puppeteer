@@ -12,44 +12,62 @@ var parseJson = process.argv[4];
 
 (async () => {
 
-  const timestamp = new Date();
-  
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-  await page.tracing.start({
-    path: traceJson,
-    screenshots: true
-    // categories: ['devtools.timeline']
-  })
+  try {
+    // timestamp
+    const timestamp = new Date();
 
-  await page.goto(url);
-  await page.tracing.stop();
-  await browser.close();
-
-  speedline(traceJson).then(res => {
-    const startTs = res.beginning;
-    const visualProgress = res.frames.map(frame => {
-      const ts = Math.floor(frame.getTimeStamp() - startTs);
-      return `${ts}=${Math.floor(frame.getProgress())}%`;
-    }).join(', ');
-
-    const visualPreceptualProgress = res.frames.map(frame => {
-      const ts = Math.floor(frame.getTimeStamp() - startTs);
-      return `${ts}=${Math.floor(frame.getPerceptualProgress())}%`;
-    }).join(', ');
-
-    const jsonData = JSON.stringify({
-      "Beginning timestamp": timestamp.toISOString(),
-      "Recording duration" : res.duration,
-      "First visual change" : res.first,
-      "Last visual change" : res.complete,
-      "Speed Index value" :  res.speedIndex,
-      "Visual Progress" : visualProgress,
-      "Perceptual Speed Index" : res.perceptualSpeedIndex,
-      "Perceptual Visual Progress" : visualPreceptualProgress
+    // brower
+    const browser = await puppeteer.launch({
+      args: [
+	'--no-sandbox', 
+        '--disable-setuid-sandbox'
+      ]
     });
-    fs.writeFile(parseJson, jsonData, (error) => { /* handle error */ });
-  });
+
+    // new page
+    const page = await browser.newPage();
+    await page.tracing.start({
+      path: traceJson,
+      screenshots: true
+      // categories: ['devtools.timeline']
+    });
+
+    // go page 
+    await page.goto(url);
+    await page.tracing.stop();
+    await browser.close();
+
+	  // speedline
+    speedline(traceJson).then(res => {
+      const startTs = res.beginning;
+      const visualProgress = res.frames.map(frame => {
+        const ts = Math.floor(frame.getTimeStamp() - startTs);
+        return `${ts}=${Math.floor(frame.getProgress())}%`;
+      }).join(', ');
+
+      const visualPreceptualProgress = res.frames.map(frame => {
+        const ts = Math.floor(frame.getTimeStamp() - startTs);
+        return `${ts}=${Math.floor(frame.getPerceptualProgress())}%`;
+      }).join(', ');
+
+      const jsonData = JSON.stringify({
+        "Beginning timestamp": timestamp.toISOString(),
+        "Recording duration" : res.duration,
+        "First visual change" : res.first,
+        "Last visual change" : res.complete,
+        "Speed Index value" :  res.speedIndex,
+        "Visual Progress" : visualProgress,
+        "Perceptual Speed Index" : res.perceptualSpeedIndex,
+        "Perceptual Visual Progress" : visualPreceptualProgress
+      });
+      fs.writeFile(parseJson, jsonData, (error) => { /* handle error */ });
+    });
+
+  } catch(e) {
+    console.log(e);
+    await browser.close();
+    process.exit(200);
+  }
 
 })();
 
