@@ -1,7 +1,7 @@
 # monitoring-speedindex (ver. 0.9)
 
 Kibana Dashborad image
-![Screenshot](https://github.com/bashow0316/monitoring-speedindex/images/Screenshot-SpeedIndex-Kibana.png)
+![Screenshot](https://raw.githubusercontent.com/bashow0316/monitoring-speedindex/master/images/Screenshot-SpeedIndex-Kibana.png)
 
 ## Use application
 
