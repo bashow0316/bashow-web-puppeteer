@@ -65,7 +65,7 @@ http://localhost:5601
 
 Check elasticsearch index
 
-Management > Index patterns > Create index pattern
+`Management` > `Index patterns` > `Create index pattern`
 
 Index pattern
 
@@ -73,7 +73,7 @@ Index pattern
 index-*
 ```
 
-Click Discover
+Click `Discover`
 
 ### 6. cron.d
 
