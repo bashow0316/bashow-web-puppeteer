@@ -1,7 +1,102 @@
-# monitoring-speedindex (ver. 0.9)
+# netsimon (NET Speed Index MONitoring) v1.0
 
-Kibana Dashborad image
+Netsimon is an application that monitors the speed index of a web pages.
+
+Kibana Dashborad Image
 ![Screenshot](https://raw.githubusercontent.com/bashow0316/monitoring-speedindex/master/images/Screenshot-SpeedIndex-Kibana.png)
+
+## QuickStart
+
+ubuntu
+
+### 1. Install netsimon
+
+``` shell
+git clone https://github.com/bashow0316/netsimon.git
+```
+
+#### 2. APT install app
+
+``` shell
+sudo apt install chromium-browser
+sudo apt install npm
+```
+
+#### 3. npm install
+
+cd
+
+``` shell
+cd netsimon/script
+
+```
+
+Install puppeteer
+
+``` shell
+npm i puppeteer
+```
+
+Install speedline
+
+``` shell
+sudo npm install -g speedline
+```
+
+### 4. docker-compose
+
+
+``` shell
+cd netsimon
+sudo mkdir elastic01-data && sudo chown -R 1000:1000 elastic01-data
+sudo docker-compose up -d
+```
+
+### 5. Testing
+
+``` shell
+cd netsimon/script
+./speedline.sh
+```
+
+Access kibana
+
+http://localhost:5601
+
+Check elasticsearch index
+
+Management > Index patterns > Create index pattern
+
+Index pattern
+
+```
+index-*
+```
+
+Click Discover
+
+### 6. cron.d
+
+Change user at cron.d/netsimon
+
+``` shell
+cd netsimon/cron.d
+vi netsimon
+(Change user)
+```
+
+Move cron.d/netsimon
+
+``` shell
+cd netsimon/cron.d
+sudo cp netsimon /etc/cron.d/
+sudo systemctl restart cron.service
+```
+
+## Speed Index
+
+- https://developers.google.com/web/tools/lighthouse/audits/speed-index
+- https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index
 
 ## Use application
 
@@ -14,61 +109,32 @@ Kibana Dashborad image
 
 ### Docker
 
-```
-https://www.docker.com/
-```
+- https://www.docker.com/
+
 
 ### Docker-compose
 
-```
-https://docs.docker.com/compose/
-```
+- https://docs.docker.com/compose/
 
 ### puppeteer
 
-```
-https://developers.google.com/web/tools/chrome-devtools
-https://github.com/puppeteer/puppeteer
-```
+- https://developers.google.com/web/tools/chrome-devtools
+- https://github.com/puppeteer/puppeteer
+
 
 Page tracing
-```
-https://github.com/puppeteer/puppeteer/blob/master/docs/api.md#pagetracing
-https://github.com/puppeteer/puppeteer/blob/master/docs/api.md#class-tracing
-```
+
+- https://github.com/puppeteer/puppeteer/blob/master/docs/api.md#pagetracing
+- https://github.com/puppeteer/puppeteer/blob/master/docs/api.md#class-tracing
 
 ### speedline
 
-```
-https://developers.google.com/web/tools/lighthouse/audits/speed-index
-https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index
-https://github.com/paulirish/speedline
-```
+- https://developers.google.com/web/tools/lighthouse/audits/speed-index
+- https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index
+- https://github.com/paulirish/speedline
 
-## Quickstart
+## Respect applications
 
-```
-To write...
-```
-
-## Install
-
-### APT install app
-
-```
-sudo apt install chromium-browser
-sudo apt install npm
-```
-
-### npm install
-
-puppeteer
-```
-npm i puppeteer
-```
-
-speedline
-```
-sudo npm install -g speedline
-```
-
+- https://github.com/netdata/netdata
+- https://developers.google.com/web/tools/chrome-devtools/
+- https://github.com/GoogleChrome/lighthouse
