@@ -93,6 +93,32 @@ sudo cp netsimon /etc/cron.d/
 sudo systemctl restart cron.service
 ```
 
+### 7.kibana dashboard
+
+Make kibana dashboard
+
+Sample dashboard
+
+``` json
+netsimon/kibana-object/export.ndjson
+```
+
+### Option
+
+Change Web page list
+
+Chage file
+
+``` text
+netsimon/script/speedline.conf
+```
+
+Sample
+
+``` text
+name URL
+```
+
 ## Speed Index
 
 - https://developers.google.com/web/tools/lighthouse/audits/speed-index
