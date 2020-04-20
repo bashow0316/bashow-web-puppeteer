@@ -93,7 +93,7 @@ sudo cp netsimon /etc/cron.d/
 sudo systemctl restart cron.service
 ```
 
-### 7.kibana dashboard
+### 7. Kibana dashboard
 
 Make kibana dashboard
 
