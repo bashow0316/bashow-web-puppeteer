@@ -19,7 +19,7 @@ var parseJson = process.argv[4];
     // brower
     const browser = await puppeteer.launch({
       args: [
-	'--no-sandbox', 
+        '--no-sandbox', 
         '--disable-setuid-sandbox'
       ]
     });
@@ -37,7 +37,7 @@ var parseJson = process.argv[4];
     await page.tracing.stop();
     await browser.close();
 
-	  // speedline
+    // speedline
     speedline(traceJson).then(res => {
       const startTs = res.beginning;
       const visualProgress = res.frames.map(frame => {
