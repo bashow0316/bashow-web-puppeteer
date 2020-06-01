@@ -27,6 +27,7 @@ sudo apt install npm
 #### 3. npm install
 
 cd dir
+
 Install puppeteer & speedline
 
 ``` shell
