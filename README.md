@@ -26,27 +26,16 @@ sudo apt install npm
 
 #### 3. npm install
 
-cd
+cd dir
+Install puppeteer & speedline
 
 ``` shell
 cd netsimon/script
-
-```
-
-Install puppeteer
-
-``` shell
 npm i puppeteer
-```
-
-Install speedline
-
-``` shell
-sudo npm install -g speedline
+npm i speedline
 ```
 
 ### 4. docker-compose
-
 
 ``` shell
 cd netsimon
