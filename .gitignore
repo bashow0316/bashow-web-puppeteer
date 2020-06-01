@@ -1,5 +1,7 @@
 /script/node_modules
 /script/trace-json
 /script/parse-json
+/script/npm-debug.log
+/script/package-lock.json
+/script/package.json
 /elastic01-data
-
