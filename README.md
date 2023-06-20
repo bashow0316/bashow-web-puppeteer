@@ -91,7 +91,7 @@ Make kibana dashboard
 
 Sample dashboard
 
-``` json
+``` text
 netsimon/kibana-object/export.ndjson
 ```
 
